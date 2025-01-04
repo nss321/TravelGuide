@@ -141,52 +141,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="533" id="jXP-ak-SX0">
-                                <rect key="frame" x="0.0" y="50" width="390" height="533"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="firstTableViewCell" rowHeight="474" id="jXP-ak-SX0" customClass="FirstTableViewCell" customModule="TravelGuide" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="390" height="474"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jXP-ak-SX0" id="vtw-rV-qbx">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="533"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="474"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o9d-ct-ssF">
-                                            <rect key="frame" x="16" y="16" width="358" height="517"/>
+                                            <rect key="frame" x="16" y="16" width="358" height="458"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9o-xj-eKl">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9o-xj-eKl">
                                                     <rect key="frame" x="0.0" y="0.0" width="358" height="358"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="p9o-xj-eKl" secondAttribute="height" multiplier="1:1" id="jZR-Lz-McO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024 NEWS 해외여행, 이렇게 달라졌다!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2P-ir-NJQ">
-                                                    <rect key="frame" x="0.0" y="374" width="277.33333333333331" height="20.333333333333314"/>
+                                                    <rect key="frame" x="0.0" y="366" width="358" height="20.333333333333314"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23년 11월 22일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtZ-tW-lk4">
-                                                    <rect key="frame" x="250" y="484" width="108" height="21"/>
+                                                    <rect key="frame" x="250" y="425" width="108" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알고 준비하는 2024 새 여행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHP-zV-qB2">
-                                                    <rect key="frame" x="0.0" y="398.33333333333331" width="190" height="21"/>
+                                                    <rect key="frame" x="0.0" y="390.33333333333331" width="190" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             <constraints>
                                                 <constraint firstItem="iHP-zV-qB2" firstAttribute="top" secondItem="y2P-ir-NJQ" secondAttribute="bottom" constant="4" id="1Vo-IZ-VoU"/>
                                                 <constraint firstAttribute="bottom" secondItem="XtZ-tW-lk4" secondAttribute="bottom" constant="12" id="5Qx-EF-HaZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="XtZ-tW-lk4" secondAttribute="trailing" id="5ft-dS-fkv"/>
+                                                <constraint firstAttribute="trailing" secondItem="y2P-ir-NJQ" secondAttribute="trailing" id="B3L-Uz-AQr"/>
                                                 <constraint firstItem="p9o-xj-eKl" firstAttribute="width" secondItem="o9d-ct-ssF" secondAttribute="width" id="DH6-Nb-6Iy"/>
                                                 <constraint firstItem="p9o-xj-eKl" firstAttribute="top" secondItem="o9d-ct-ssF" secondAttribute="top" id="E6c-S0-18B"/>
                                                 <constraint firstItem="iHP-zV-qB2" firstAttribute="leading" secondItem="o9d-ct-ssF" secondAttribute="leading" id="Nud-mO-NJF"/>
-                                                <constraint firstItem="y2P-ir-NJQ" firstAttribute="top" secondItem="p9o-xj-eKl" secondAttribute="bottom" constant="16" id="PnJ-31-vqT"/>
                                                 <constraint firstItem="y2P-ir-NJQ" firstAttribute="leading" secondItem="o9d-ct-ssF" secondAttribute="leading" id="Z66-sf-EWo"/>
                                                 <constraint firstItem="p9o-xj-eKl" firstAttribute="centerX" secondItem="o9d-ct-ssF" secondAttribute="centerX" id="eEA-AO-sYI"/>
+                                                <constraint firstItem="y2P-ir-NJQ" firstAttribute="top" secondItem="p9o-xj-eKl" secondAttribute="bottom" constant="8" id="nY3-3g-feY"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -198,9 +198,15 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <connections>
+                                    <outlet property="dateLabel" destination="XtZ-tW-lk4" id="aRp-ME-Sr2"/>
+                                    <outlet property="photoImageView" destination="p9o-xj-eKl" id="JUe-6G-CPT"/>
+                                    <outlet property="subtitleLabel" destination="iHP-zV-qB2" id="S00-3O-CZt"/>
+                                    <outlet property="titleLabel" destination="y2P-ir-NJQ" id="3el-yQ-M0j"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lTN-PX-5Jz">
-                                <rect key="frame" x="0.0" y="583" width="390" height="44.666667938232422"/>
+                                <rect key="frame" x="0.0" y="524" width="390" height="44.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lTN-PX-5Jz" id="LL2-1a-qIK">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="44.666667938232422"/>
@@ -217,7 +223,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdb-fh-k6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430.7692307692305" y="-37.677725118483409"/>
+            <point key="canvasLocation" x="2429.2307692307691" y="-37.677725118483409"/>
         </scene>
         <!--Item-->
         <scene sceneID="uLk-ho-vTC">
@@ -266,10 +272,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

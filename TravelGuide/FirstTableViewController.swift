@@ -6,24 +6,55 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FirstTableViewController: UITableViewController {
 
+    let magazines = MagazineInfo().magazine
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(self)
         print(Int.max)
+        
+    }
+    
+    func dateFormatter() -> String {
+        let formatter = DateFormatter()
+        return ""
+        
     }
 
-
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return 0
+        return magazines.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "firstTableViewCell", for: indexPath) as! FirstTableViewCell
+        let row = magazines[indexPath.row]
+        let url = URL(string: row.photo_image)
+        
+        cell.titleLabel.text = row.title
+        cell.subtitleLabel.text = row.subtitle
+        cell.photoImageView.kf.setImage(with: url)
+        cell.dateLabel.text = row.date
+        
+        cell.titleLabel.font = .boldSystemFont(ofSize: 24)
+        cell.subtitleLabel.font = .systemFont(ofSize: 16)
+        cell.subtitleLabel.textColor = .gray
+        cell.photoImageView.clipsToBounds = true
+        cell.photoImageView.layer.cornerRadius = 12
+        cell.dateLabel.font = .systemFont(ofSize: 16)
+        cell.dateLabel.textColor = .gray
+    
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UIScreen.main.bounds.height * 0.6
     }
 
    

@@ -9,6 +9,11 @@ import UIKit
 
 class FirstTableViewCell: UITableViewCell {
 
+    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
