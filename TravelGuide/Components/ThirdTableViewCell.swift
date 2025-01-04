@@ -9,6 +9,13 @@ import UIKit
 
 class ThirdTableViewCell: UITableViewCell {
 
+    
+    
+    @IBOutlet var containerView: UIView!
+    @IBOutlet var checkmark: UIImageView!
+    @IBOutlet var itemLabel: UILabel!
+    @IBOutlet var starButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
