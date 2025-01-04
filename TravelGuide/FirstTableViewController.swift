@@ -14,20 +14,22 @@ class FirstTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self)
-        print(Int.max)
-        
+//        print(self)
+//        print(Int.max)
     }
     
-    func dateFormatter() -> String {
+    func convertMagazineDate(stringDate: String) -> String {
         let formatter = DateFormatter()
-        return ""
-        
+        formatter.dateFormat = "yyMMdd"
+        guard let date = formatter.date(from: stringDate) else {
+            print("can not convert string to date")
+            return ""
+        }
+        formatter.dateFormat = "yy년 M월 dd일"
+        return formatter.string(from: date)
     }
 
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return magazines.count
     }
     
@@ -39,7 +41,7 @@ class FirstTableViewController: UITableViewController {
         cell.titleLabel.text = row.title
         cell.subtitleLabel.text = row.subtitle
         cell.photoImageView.kf.setImage(with: url)
-        cell.dateLabel.text = row.date
+        cell.dateLabel.text = convertMagazineDate(stringDate: row.date)
         
         cell.titleLabel.font = .boldSystemFont(ofSize: 24)
         cell.subtitleLabel.font = .systemFont(ofSize: 16)
@@ -49,14 +51,12 @@ class FirstTableViewController: UITableViewController {
         cell.dateLabel.font = .systemFont(ofSize: 16)
         cell.dateLabel.textColor = .gray
     
-        
+//        print(convertMagazineDate(stringDate: row.date))
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UIScreen.main.bounds.height * 0.6
     }
-
-   
-
+    
 }

@@ -136,13 +136,18 @@
         <scene sceneID="0nw-wI-3ct">
             <objects>
                 <tableViewController id="eRR-Mz-ICD" customClass="FirstTableViewController" customModule="TravelGuide" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vEy-dY-q4k">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vEy-dY-q4k">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="fox-9r-HvG">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="separatorColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="firstTableViewCell" rowHeight="474" id="jXP-ak-SX0" customClass="FirstTableViewCell" customModule="TravelGuide" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="390" height="474"/>
+                                <rect key="frame" x="0.0" y="51" width="390" height="474"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jXP-ak-SX0" id="vtw-rV-qbx">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="474"/>
@@ -197,7 +202,6 @@
                                         <constraint firstItem="o9d-ct-ssF" firstAttribute="top" secondItem="vtw-rV-qbx" secondAttribute="top" constant="16" id="PWP-jL-ncR"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="XtZ-tW-lk4" id="aRp-ME-Sr2"/>
                                     <outlet property="photoImageView" destination="p9o-xj-eKl" id="JUe-6G-CPT"/>
@@ -206,10 +210,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lTN-PX-5Jz">
-                                <rect key="frame" x="0.0" y="524" width="390" height="44.666667938232422"/>
+                                <rect key="frame" x="0.0" y="525" width="390" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lTN-PX-5Jz" id="LL2-1a-qIK">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="44.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -223,7 +227,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdb-fh-k6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2429.2307692307691" y="-37.677725118483409"/>
+            <point key="canvasLocation" x="2423" y="-38"/>
         </scene>
         <!--Item-->
         <scene sceneID="uLk-ho-vTC">
@@ -234,7 +238,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ckX-ne-sqC">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance" backgroundEffect="regular">
+                        <navigationBarAppearance key="standardAppearance">
                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </navigationBarAppearance>
                     </navigationBar>
@@ -268,11 +272,11 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
