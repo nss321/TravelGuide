@@ -10,7 +10,11 @@ import Kingfisher
 
 class SecondTableViewController: UITableViewController {
 
-    var travleInfo = TravelInfo().travel
+    var travleInfo = TravelInfo().travel {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +22,8 @@ class SecondTableViewController: UITableViewController {
     }
     
     @objc func likeButtonTapped(_ sender: UIButton) {
-        print(sender.tag)
+//        print(sender.tag)
         travleInfo[sender.tag].like?.toggle()
-        tableView.reloadData()
     }
     
     func configureStars(for cell: SecondTableViewCell, grade: Double?, config: UIImage.SymbolConfiguration) {

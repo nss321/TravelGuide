@@ -11,7 +11,11 @@ class ThirdTableViewController: UITableViewController {
 
     @IBOutlet var shoppingTextField: UITextField!
     
-    var list: [ShoppingItem] = []
+    var list: [ShoppingItem] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +41,6 @@ class ThirdTableViewController: UITableViewController {
     
     @objc func starButtonTapped(_ sender: UIButton) {
         list[sender.tag].isStarred.toggle()
-        tableView.reloadData()
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
@@ -57,38 +60,39 @@ class ThirdTableViewController: UITableViewController {
         }
     }
     
+    
+}
+
+extension ThirdTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         list.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = list[indexPath.row]
+        let symbolConfig = UIImage.SymbolConfiguration(hierarchicalColor: .label)
         let cell = tableView.dequeueReusableCell(withIdentifier: "thirdTableViewCell", for: indexPath) as! ThirdTableViewCell
         
-        let row = list[indexPath.row]
+        cell.itemLabel.attributedText = NSAttributedString(
+            string: row.item,
+            attributes:
+                row.isChecked ? [.strikethroughStyle : NSUnderlineStyle.single.rawValue, .strikethroughColor : UIColor.label] : nil
+        )
         
-        let symbolConfig = UIImage.SymbolConfiguration(hierarchicalColor: .label)
         var checkMarkSymbol = row.isChecked ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
         checkMarkSymbol = checkMarkSymbol?.applyingSymbolConfiguration(symbolConfig)
+        cell.checkmark.tag = indexPath.row
+        cell.checkmark.image = checkMarkSymbol
+        cell.containerView.layer.cornerRadius = 12
+        
+        // row를 선택했을 때 체크되는게 더 자연스러운 UX라고 생각해 didSelect 메소드로 변경
+        //        cell.checkmark.isUserInteractionEnabled = true
+        //        cell.checkmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkButtonTapped)))
         
         var starSymbol = row.isStarred ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         starSymbol = starSymbol?.applyingSymbolConfiguration(symbolConfig)
-        
-        cell.checkmark.tag = indexPath.row
         cell.starButton.tag = indexPath.row
-        
-        if row.isChecked {
-            cell.itemLabel.attributedText = NSAttributedString(string: row.item, attributes: [.strikethroughStyle : NSUnderlineStyle.single.rawValue, .strikethroughColor : UIColor.label])
-        } else {
-            cell.itemLabel.attributedText = NSAttributedString(string: row.item, attributes: nil)
-        }
-        
-        cell.checkmark.image = checkMarkSymbol
         cell.starButton.setImage(starSymbol, for: .normal)
-        cell.containerView.layer.cornerRadius = 12
-        
-//        cell.checkmark.isUserInteractionEnabled = true
-//        cell.checkmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkButtonTapped)))
-        
         cell.starButton.addTarget(self, action: #selector(starButtonTapped), for: .touchUpInside)
         
         return cell
@@ -96,11 +100,9 @@ class ThirdTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         list[indexPath.row].isChecked.toggle()
-        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
         // default editing style -> delete
         list.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)

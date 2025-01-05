@@ -39,15 +39,17 @@ class FirstTableViewController: UITableViewController {
         let url = URL(string: row.photo_image)
         
         cell.titleLabel.text = row.title
-        cell.subtitleLabel.text = row.subtitle
-        cell.photoImageView.kf.setImage(with: url)
-        cell.dateLabel.text = convertMagazineDate(stringDate: row.date)
-        
         cell.titleLabel.font = .boldSystemFont(ofSize: 24)
+        
+        cell.subtitleLabel.text = row.subtitle
         cell.subtitleLabel.font = .systemFont(ofSize: 16)
         cell.subtitleLabel.textColor = .gray
+        
+        cell.photoImageView.kf.setImage(with: url)
         cell.photoImageView.clipsToBounds = true
         cell.photoImageView.layer.cornerRadius = 12
+        
+        cell.dateLabel.text = convertMagazineDate(stringDate: row.date)
         cell.dateLabel.font = .systemFont(ofSize: 16)
         cell.dateLabel.textColor = .gray
     
