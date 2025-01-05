@@ -47,6 +47,16 @@ class SecondTableViewController: UITableViewController {
             }
         }
     }
+    
+    func addCommaToNumber(number: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        if let outputString = numberFormatter.string(for: number) {
+            return outputString
+        } else {
+            return ""
+        }
+    }
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,10 +65,10 @@ class SecondTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = travleInfo[indexPath.row]
-        let cell = UITableViewCell()
         let config = UIImage.SymbolConfiguration.preferringMulticolor()
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
+        // addCommaToNumber 함수로 분리
+//        let numberFormatter = NumberFormatter()
+//        numberFormatter.numberStyle = .decimal
         
         switch row.ad {
         case true:
@@ -72,6 +82,7 @@ class SecondTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "secondTableViewCell", for: indexPath) as! SecondTableViewCell
             
             // 이전 Cell의 별점 초기화
+            // MARK: 원래 row.grade 옵셔널 바인딩 후 nil 처리 부분에 작성했던 코드인데, 이렇게 구현하니 스크롤 후 테이블 뷰 리로드 시 별점 이미지가 이상하게 바뀌어서,, 앞부분으로 옮겨보니 해결됐습니다. 테이블 뷰 셀 재사용에 대한 이해가 부족한 것 같은데, 어떤 자료를 보면 도움이 될까요?
             cell.gradeImageView.forEach {
                 $0.image = UIImage(systemName: "star")?.applyingSymbolConfiguration(config)
             }
@@ -85,11 +96,16 @@ class SecondTableViewController: UITableViewController {
             }
             
             if let imageLink = row.travel_image, let url = URL(string: imageLink) {
+                cell.likeButton.isHidden = false
+                cell.travelImageVIew.contentMode = .scaleAspectFill
                 cell.travelImageVIew.kf.setImage(with: url)
             } else {
+                cell.likeButton.isHidden = true
+                cell.travelImageVIew.contentMode = .scaleAspectFit
                 cell.travelImageVIew.image = UIImage(systemName: "xmark.circle.fill")?.applyingSymbolConfiguration(config)
             }
             
+            // configureStars 함수로 분리
 //            if let grade = row.grade {
 //                if Int(grade + 1) == Int(grade.rounded()) {
 //                    for i in 0...Int(grade.rounded())-2 {
@@ -112,10 +128,9 @@ class SecondTableViewController: UITableViewController {
             
             if let save = row.save {
                 // 리뷰 수는 랜덤으로 지정
-                let numberOfReviews = Int.random(in: 1...2000)
-                let convertedReview = numberFormatter.string(for: numberOfReviews)
-                let convertedSave = numberFormatter.string(for: save)
-//                cell.reviewAndSaveLabel.text = "(\(convertedReview!)) · 저장 \(convertedSave!)"
+                let convertedReview = addCommaToNumber(number: Int.random(in: 1...2000))
+                let convertedSave = addCommaToNumber(number: save)
+                cell.reviewAndSaveLabel.text = "(\(convertedReview)) · 저장 \(convertedSave)"
             } else {
                 cell.reviewAndSaveLabel.text = "(0) · 저장 (0)"
                 cell.gradeImageView.forEach {
