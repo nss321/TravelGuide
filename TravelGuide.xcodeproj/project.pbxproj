@@ -22,6 +22,8 @@
 		11721D832D292671002F49A3 /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721D822D292671002F49A3 /* SecondTableViewController.swift */; };
 		11721D852D292677002F49A3 /* ThirdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721D842D292677002F49A3 /* ThirdTableViewController.swift */; };
 		11721D872D292804002F49A3 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721D862D292804002F49A3 /* FirstTableViewCell.swift */; };
+		11FE11C72D2A617600BCAF8B /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE11C62D2A616F00BCAF8B /* ShoppingItem.swift */; };
+		11FE11CA2D2A631000BCAF8B /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE11C92D2A630A00BCAF8B /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		11721D822D292671002F49A3 /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
 		11721D842D292677002F49A3 /* ThirdTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewController.swift; sourceTree = "<group>"; };
 		11721D862D292804002F49A3 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		11FE11C62D2A616F00BCAF8B /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
+		11FE11C92D2A630A00BCAF8B /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		1171DB032D291AC5009296F6 /* TravelGuide */ = {
 			isa = PBXGroup;
 			children = (
+				11FE11C82D2A630300BCAF8B /* Extension */,
 				1140F2EF2D29281B003B9097 /* Components */,
 				11721D7F2D292398002F49A3 /* Model */,
 				1171DB042D291AC5009296F6 /* AppDelegate.swift */,
@@ -103,10 +108,19 @@
 		11721D7F2D292398002F49A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				11FE11C62D2A616F00BCAF8B /* ShoppingItem.swift */,
 				11721D7B2D29238C002F49A3 /* MagazineInfo.swift */,
 				11721D7D2D292395002F49A3 /* TravelInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		11FE11C82D2A630300BCAF8B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				11FE11C92D2A630A00BCAF8B /* UIViewController+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11FE11C72D2A617600BCAF8B /* ShoppingItem.swift in Sources */,
 				11721D872D292804002F49A3 /* FirstTableViewCell.swift in Sources */,
 				1140F2F12D292841003B9097 /* SecondTableViewCell.swift in Sources */,
 				11721D7E2D292395002F49A3 /* TravelInfo.swift in Sources */,
@@ -194,6 +209,7 @@
 				11721D812D2924FC002F49A3 /* FirstTableViewController.swift in Sources */,
 				11721D852D292677002F49A3 /* ThirdTableViewController.swift in Sources */,
 				11721D7C2D29238C002F49A3 /* MagazineInfo.swift in Sources */,
+				11FE11CA2D2A631000BCAF8B /* UIViewController+.swift in Sources */,
 				11721D832D292671002F49A3 /* SecondTableViewController.swift in Sources */,
 				1171DB052D291AC5009296F6 /* AppDelegate.swift in Sources */,
 				1171DB072D291AC5009296F6 /* SceneDelegate.swift in Sources */,

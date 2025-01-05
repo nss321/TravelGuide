@@ -8,8 +8,6 @@
 import UIKit
 
 class ThirdTableViewCell: UITableViewCell {
-
-    
     
     @IBOutlet var containerView: UIView!
     @IBOutlet var checkmark: UIImageView!
