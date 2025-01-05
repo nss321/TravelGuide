@@ -23,6 +23,10 @@ class SecondTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "secondTableViewCell", for: indexPath) as! SecondTableViewCell
         
+        let row = travleInfo[indexPath.row]
+        
+        
+        
         return cell
         
     }
