@@ -98,4 +98,12 @@ class ThirdTableViewController: UITableViewController {
         list[indexPath.row].isChecked.toggle()
         tableView.reloadData()
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // default editing style -> delete
+        list.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
 }
