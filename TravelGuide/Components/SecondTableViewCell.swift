@@ -10,14 +10,11 @@ import UIKit
 class SecondTableViewCell: UITableViewCell {
 
     @IBOutlet var titleLabel: UILabel!
-    
     @IBOutlet var descLabel: UILabel!
-    
-    @IBOutlet var travelImageView: UIImageView!
-    
     @IBOutlet var gradeImageView: [UIImageView]!
-    
-    
+    @IBOutlet var reviewAndSaveLabel: UILabel!
+    @IBOutlet var travelImageVIew: UIImageView!
+    @IBOutlet var likeButton: UIButton!
     
     
     override func awakeFromNib() {
