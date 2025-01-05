@@ -379,7 +379,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k5B-zl-yUE">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="labelColor"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
                         <segue destination="lT8-eQ-edF" kind="relationship" relationship="viewControllers" id="gKb-xw-YJd"/>
@@ -391,11 +393,11 @@
             </objects>
             <point key="canvasLocation" x="-124.42748091603053" y="-37.323943661971832"/>
         </scene>
-        <!--Item-->
+        <!--인기 도시-->
         <scene sceneID="tOZ-Cu-f1u">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ai8-n9-V3h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Oru-nu-sFE"/>
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="map" catalog="system" selectedImage="map.fill" id="Oru-nu-sFE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zmb-xS-5bM">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -500,11 +502,11 @@
             </objects>
             <point key="canvasLocation" x="2421.5384615384614" y="-38.388625592417057"/>
         </scene>
-        <!--Item-->
+        <!--여행-->
         <scene sceneID="uLk-ho-vTC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lT8-eQ-edF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Om4-u7-uu4"/>
+                    <tabBarItem key="tabBarItem" title="여행" image="airplane.departure" catalog="system" selectedImage="airplane.arrival" id="Om4-u7-uu4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ckX-ne-sqC">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -522,11 +524,11 @@
             </objects>
             <point key="canvasLocation" x="1504.5801526717557" y="-37.323943661971832"/>
         </scene>
-        <!--Item-->
+        <!--쇼핑-->
         <scene sceneID="nbn-U4-MKB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5xc-4h-SF2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Zzj-xX-kHi"/>
+                    <tabBarItem key="tabBarItem" title="쇼핑" image="bag" catalog="system" selectedImage="bag.fill" id="Zzj-xX-kHi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6l0-Xj-e3Z">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
@@ -543,8 +545,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="airplane.arrival" catalog="system" width="128" height="101"/>
+        <image name="airplane.departure" catalog="system" width="128" height="84"/>
+        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="bag.fill" catalog="system" width="128" height="128"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
