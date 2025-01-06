@@ -43,9 +43,7 @@ class ThirdTableViewController: UITableViewController {
         list[sender.tag].isStarred.toggle()
     }
     
-    @IBAction func addButtonTapped(_ sender: UIButton) {
-        view.endEditing(true)
-        print(#function)
+    func addTextFieldText() {
         guard let item = shoppingTextField.text else {
             print("쇼핑 텍스트 필드 입력 에러: nil 검출")
             return
@@ -60,6 +58,16 @@ class ThirdTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+        view.endEditing(true)
+        print(#function)
+        addTextFieldText()
+    }
+    
+    @IBAction func shoppingTextFieldReturn(_ sender: UITextField) {
+        view.endEditing(true)
+        addTextFieldText()
+    }
     
 }
 
@@ -83,7 +91,6 @@ extension ThirdTableViewController {
         checkMarkSymbol = checkMarkSymbol?.applyingSymbolConfiguration(symbolConfig)
         cell.checkmark.tag = indexPath.row
         cell.checkmark.image = checkMarkSymbol
-        cell.containerView.layer.cornerRadius = 12
         
         // row를 선택했을 때 체크되는게 더 자연스러운 UX라고 생각해 didSelect 메소드로 변경
         //        cell.checkmark.isUserInteractionEnabled = true
