@@ -74,8 +74,6 @@ class SecondTableViewController: UITableViewController {
         case true:
             let cell = tableView.dequeueReusableCell(withIdentifier: "advertiseTableViewCell", for: indexPath) as! AdvertiseTableViewCell
             cell.titleLabel.text = row.title
-            cell.containerView.clipsToBounds = true
-            cell.containerView.layer.cornerRadius = 12
             return cell
             
         case false:
@@ -95,7 +93,9 @@ class SecondTableViewController: UITableViewController {
                 cell.descLabel.text = ""
             }
             
+            // MARK: cell의 awakeFromNib에서 이미지 링크가 nil인 경우를 기본으로 설정해두고, 이부분에서는 nil이 아닐때만 이미지를 불러오도록 하는게 더 나은 코드일까요??
             if let imageLink = row.travel_image, let url = URL(string: imageLink) {
+                // 아래 코드를 awakeFromNib으로
                 cell.likeButton.isHidden = false
                 cell.travelImageVIew.contentMode = .scaleAspectFill
                 cell.travelImageVIew.kf.setImage(with: url)
@@ -141,11 +141,8 @@ class SecondTableViewController: UITableViewController {
             if let like = row.like {
                 let likeButtonImage = like ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
                 cell.likeButton.setImage(likeButtonImage, for: .normal)
-            } else {
-                cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
             }
             cell.likeButton.tag = indexPath.row
-            cell.likeButton.tintColor = .red
             cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
             
             return cell

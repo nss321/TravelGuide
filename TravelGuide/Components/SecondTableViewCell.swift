@@ -19,7 +19,8 @@ class SecondTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        likeButton.tintColor = .systemRed
+        likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
