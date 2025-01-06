@@ -390,6 +390,8 @@
                         <segue destination="lT8-eQ-edF" kind="relationship" relationship="viewControllers" id="gKb-xw-YJd"/>
                         <segue destination="Ai8-n9-V3h" kind="relationship" relationship="viewControllers" id="x4j-3d-eWg"/>
                         <segue destination="5xc-4h-SF2" kind="relationship" relationship="viewControllers" id="1k1-KT-iLJ"/>
+                        <segue destination="Nba-kJ-fif" kind="relationship" relationship="viewControllers" id="jy0-lp-dS7"/>
+                        <segue destination="a2u-qK-7Yg" kind="relationship" relationship="viewControllers" id="JOd-nF-hY6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXz-SD-nLv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -546,6 +548,150 @@
             </objects>
             <point key="canvasLocation" x="2453.8461538461538" y="1345.734597156398"/>
         </scene>
+        <!--인기 도시-->
+        <scene sceneID="py0-gV-Ywk">
+            <objects>
+                <tableViewController id="qlm-NT-I5l" customClass="CityTableViewController" customModule="TravelGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="OoJ-Qz-62b">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="4sE-F0-1PN">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="94"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gTl-mg-KWg">
+                                    <rect key="frame" x="16" y="52" width="358" height="27"/>
+                                    <segments>
+                                        <segment title="모두"/>
+                                        <segment title="국내"/>
+                                        <segment title="해외"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="regionSegmentedChanged:" destination="qlm-NT-I5l" eventType="valueChanged" id="pIq-ka-ZoE"/>
+                                    </connections>
+                                </segmentedControl>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ep4-bS-jCE">
+                                    <rect key="frame" x="16" y="12" width="358" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="RzQ-z4-MQB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="realTimeSearching:" destination="qlm-NT-I5l" eventType="editingChanged" id="RC1-sa-KVE"/>
+                                        <action selector="returnKeyTapped:" destination="qlm-NT-I5l" eventType="editingDidEndOnExit" id="M8d-PI-PxA"/>
+                                    </connections>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSM-aJ-x49" userLabel="navLine">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="1"/>
+                                    <color key="backgroundColor" systemColor="separatorColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="5Pc-n7-xKh"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="gTl-mg-KWg" firstAttribute="leading" secondItem="4sE-F0-1PN" secondAttribute="leading" constant="16" id="0HS-i4-2dU"/>
+                                <constraint firstAttribute="trailing" secondItem="HSM-aJ-x49" secondAttribute="trailing" id="KMg-Gj-0TP"/>
+                                <constraint firstItem="HSM-aJ-x49" firstAttribute="leading" secondItem="4sE-F0-1PN" secondAttribute="leading" id="RKK-6U-6tF"/>
+                                <constraint firstItem="ep4-bS-jCE" firstAttribute="leading" secondItem="4sE-F0-1PN" secondAttribute="leading" constant="16" id="W1M-1T-3bo"/>
+                                <constraint firstItem="gTl-mg-KWg" firstAttribute="top" secondItem="ep4-bS-jCE" secondAttribute="bottom" constant="4" id="ZzY-XD-3D9"/>
+                                <constraint firstAttribute="trailing" secondItem="gTl-mg-KWg" secondAttribute="trailing" constant="16" id="baV-Al-3GG"/>
+                                <constraint firstAttribute="trailing" secondItem="ep4-bS-jCE" secondAttribute="trailing" constant="16" id="fvq-uE-Ssf"/>
+                                <constraint firstAttribute="bottom" secondItem="gTl-mg-KWg" secondAttribute="bottom" constant="16" id="qmH-X3-n1w"/>
+                                <constraint firstItem="HSM-aJ-x49" firstAttribute="top" secondItem="4sE-F0-1PN" secondAttribute="top" id="tlX-UW-hDV"/>
+                                <constraint firstItem="ep4-bS-jCE" firstAttribute="top" secondItem="4sE-F0-1PN" secondAttribute="top" constant="12" id="us0-3i-UaL"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="5rV-wQ-zMc">
+                                <rect key="frame" x="0.0" y="144" width="390" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5rV-wQ-zMc" id="hma-RL-NxG">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qlm-NT-I5l" id="UFO-IW-nsT"/>
+                            <outlet property="delegate" destination="qlm-NT-I5l" id="tEH-JC-xpO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="인기 도시" id="QEd-kW-j1a"/>
+                    <connections>
+                        <outlet property="regionSegmentedControl" destination="gTl-mg-KWg" id="ybb-Xd-QhG"/>
+                        <outlet property="searchTextField" destination="ep4-bS-jCE" id="ovE-Kw-qmh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCn-JY-WGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3416.9230769230767" y="2047.3933649289099"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="YoX-p9-yzH">
+            <objects>
+                <viewController id="a2u-qK-7Yg" customClass="ShadowTestViewController" customModule="TravelGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CLE-HW-PCq">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97o-vR-shU">
+                                <rect key="frame" x="75" y="302" width="240" height="240"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="getting-started-card.png" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-mx-oco">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="dNb-mx-oco" firstAttribute="leading" secondItem="97o-vR-shU" secondAttribute="leading" id="GvZ-tI-z3L"/>
+                                    <constraint firstItem="dNb-mx-oco" firstAttribute="top" secondItem="97o-vR-shU" secondAttribute="top" id="Wyz-H7-0dl"/>
+                                    <constraint firstAttribute="trailing" secondItem="dNb-mx-oco" secondAttribute="trailing" id="Z86-JN-Lab"/>
+                                    <constraint firstAttribute="width" constant="240" id="gyR-7c-cYE"/>
+                                    <constraint firstAttribute="bottom" secondItem="dNb-mx-oco" secondAttribute="bottom" id="nhA-un-giu"/>
+                                    <constraint firstAttribute="height" constant="240" id="nvC-Ze-Rv8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KIh-NI-d3e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="97o-vR-shU" firstAttribute="centerX" secondItem="CLE-HW-PCq" secondAttribute="centerX" id="AEF-sp-I9T"/>
+                            <constraint firstItem="97o-vR-shU" firstAttribute="centerY" secondItem="CLE-HW-PCq" secondAttribute="centerY" id="zXr-6l-7bK"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="CfE-5B-XpA"/>
+                    <connections>
+                        <outlet property="container" destination="97o-vR-shU" id="aMD-V1-xt6"/>
+                        <outlet property="imageView" destination="dNb-mx-oco" id="9DH-0m-92T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7D-Ac-XMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1694" y="1896"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="aPM-Kg-dMR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nba-kJ-fif" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="flame" catalog="system" selectedImage="flame.fill" id="fFS-3p-HAU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9te-Zt-BP3">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qlm-NT-I5l" kind="relationship" relationship="rootViewController" id="uAU-nv-3ym"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0q-th-Bck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2487.6923076923076" y="2048.815165876777"/>
+        </scene>
     </scenes>
     <resources>
         <image name="airplane.arrival" catalog="system" width="128" height="101"/>
@@ -553,6 +699,9 @@
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="bag.fill" catalog="system" width="128" height="128"/>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="flame" catalog="system" width="106" height="128"/>
+        <image name="flame.fill" catalog="system" width="106" height="128"/>
+        <image name="getting-started-card.png" width="500" height="275"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>

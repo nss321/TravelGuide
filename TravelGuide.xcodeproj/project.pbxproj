@@ -25,6 +25,10 @@
 		11721D872D292804002F49A3 /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11721D862D292804002F49A3 /* FirstTableViewCell.swift */; };
 		11A0E9E02D2BD8BB00B3EBE3 /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E9DF2D2BD8BB00B3EBE3 /* CityInfo.swift */; };
 		11A0E9E42D2C134D00B3EBE3 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E9E32D2C134800B3EBE3 /* UIImage+.swift */; };
+		11A0E9E72D2C1F0C00B3EBE3 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E9E62D2C1F0C00B3EBE3 /* CityTableViewController.swift */; };
+		11A0E9E92D2C238F00B3EBE3 /* ShadowTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E9E82D2C238F00B3EBE3 /* ShadowTestViewController.swift */; };
+		11A0E9EC2D2C28F200B3EBE3 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E9EA2D2C28F200B3EBE3 /* CityTableViewCell.swift */; };
+		11A0E9ED2D2C28F200B3EBE3 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A0E9EB2D2C28F200B3EBE3 /* CityTableViewCell.xib */; };
 		11FE11C72D2A617600BCAF8B /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE11C62D2A616F00BCAF8B /* ShoppingItem.swift */; };
 		11FE11CA2D2A631000BCAF8B /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FE11C92D2A630A00BCAF8B /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +53,10 @@
 		11721D862D292804002F49A3 /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		11A0E9DF2D2BD8BB00B3EBE3 /* CityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
 		11A0E9E32D2C134800B3EBE3 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		11A0E9E62D2C1F0C00B3EBE3 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		11A0E9E82D2C238F00B3EBE3 /* ShadowTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTestViewController.swift; sourceTree = "<group>"; };
+		11A0E9EA2D2C28F200B3EBE3 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityTableViewCell.swift; path = TravelGuide/Components/CityTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		11A0E9EB2D2C28F200B3EBE3 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CityTableViewCell.xib; path = TravelGuide/Components/CityTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		11FE11C62D2A616F00BCAF8B /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 		11FE11C92D2A630A00BCAF8B /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +76,9 @@
 		1140F2EF2D29281B003B9097 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				11A0E9EB2D2C28F200B3EBE3 /* CityTableViewCell.xib */,
 				11721D862D292804002F49A3 /* FirstTableViewCell.swift */,
+				11A0E9EA2D2C28F200B3EBE3 /* CityTableViewCell.swift */,
 				11434A3B2D2A78C2004D79DB /* AdvertiseTableViewCell.swift */,
 				1140F2F02D292841003B9097 /* SecondTableViewCell.swift */,
 				1140F2F22D292847003B9097 /* ThirdTableViewCell.swift */,
@@ -95,16 +105,13 @@
 		1171DB032D291AC5009296F6 /* TravelGuide */ = {
 			isa = PBXGroup;
 			children = (
+				11A0E9E52D2C1EB800B3EBE3 /* ViewController */,
 				11FE11C82D2A630300BCAF8B /* Extension */,
 				1140F2EF2D29281B003B9097 /* Components */,
 				11721D7F2D292398002F49A3 /* Model */,
 				1171DB042D291AC5009296F6 /* AppDelegate.swift */,
 				1171DB062D291AC5009296F6 /* SceneDelegate.swift */,
-				1171DB082D291AC5009296F6 /* ViewController.swift */,
 				1171DB0A2D291AC5009296F6 /* Main.storyboard */,
-				11721D802D2924FC002F49A3 /* FirstTableViewController.swift */,
-				11721D822D292671002F49A3 /* SecondTableViewController.swift */,
-				11721D842D292677002F49A3 /* ThirdTableViewController.swift */,
 				1171DB0D2D291AC7009296F6 /* Assets.xcassets */,
 				1171DB0F2D291AC7009296F6 /* LaunchScreen.storyboard */,
 				1171DB122D291AC7009296F6 /* Info.plist */,
@@ -121,6 +128,19 @@
 				11721D7D2D292395002F49A3 /* TravelInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		11A0E9E52D2C1EB800B3EBE3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1171DB082D291AC5009296F6 /* ViewController.swift */,
+				11721D802D2924FC002F49A3 /* FirstTableViewController.swift */,
+				11721D822D292671002F49A3 /* SecondTableViewController.swift */,
+				11721D842D292677002F49A3 /* ThirdTableViewController.swift */,
+				11A0E9E62D2C1F0C00B3EBE3 /* CityTableViewController.swift */,
+				11A0E9E82D2C238F00B3EBE3 /* ShadowTestViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		11FE11C82D2A630300BCAF8B /* Extension */ = {
@@ -198,6 +218,7 @@
 			files = (
 				1171DB0E2D291AC7009296F6 /* Assets.xcassets in Resources */,
 				1171DB112D291AC7009296F6 /* Base in Resources */,
+				11A0E9ED2D2C28F200B3EBE3 /* CityTableViewCell.xib in Resources */,
 				1171DB0C2D291AC5009296F6 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +232,7 @@
 			files = (
 				11FE11C72D2A617600BCAF8B /* ShoppingItem.swift in Sources */,
 				11434A3C2D2A78C2004D79DB /* AdvertiseTableViewCell.swift in Sources */,
+				11A0E9E92D2C238F00B3EBE3 /* ShadowTestViewController.swift in Sources */,
 				11721D872D292804002F49A3 /* FirstTableViewCell.swift in Sources */,
 				1140F2F12D292841003B9097 /* SecondTableViewCell.swift in Sources */,
 				11721D7E2D292395002F49A3 /* TravelInfo.swift in Sources */,
@@ -219,8 +241,10 @@
 				1171DB092D291AC5009296F6 /* ViewController.swift in Sources */,
 				11A0E9E02D2BD8BB00B3EBE3 /* CityInfo.swift in Sources */,
 				11721D812D2924FC002F49A3 /* FirstTableViewController.swift in Sources */,
+				11A0E9E72D2C1F0C00B3EBE3 /* CityTableViewController.swift in Sources */,
 				11721D852D292677002F49A3 /* ThirdTableViewController.swift in Sources */,
 				11721D7C2D29238C002F49A3 /* MagazineInfo.swift in Sources */,
+				11A0E9EC2D2C28F200B3EBE3 /* CityTableViewCell.swift in Sources */,
 				11FE11CA2D2A631000BCAF8B /* UIViewController+.swift in Sources */,
 				11721D832D292671002F49A3 /* SecondTableViewController.swift in Sources */,
 				1171DB052D291AC5009296F6 /* AppDelegate.swift in Sources */,
