@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ThirdTableViewCell: UITableViewCell {
+final class ThirdTableViewCell: UITableViewCell {
     
-    @IBOutlet var containerView: UIView!
+    static let identifier = "ThirdTableViewCell"
+    
+    @IBOutlet private var containerView: UIView!
     @IBOutlet var checkmark: UIImageView!
-    @IBOutlet var itemLabel: UILabel!
+    @IBOutlet private var itemLabel: UILabel!
     @IBOutlet var starButton: UIButton!
     
     override func awakeFromNib() {
@@ -20,10 +22,16 @@ class ThirdTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = 12
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func config(row: ShoppingItem) {
+        itemLabel.attributedText = NSAttributedString(
+            string: row.item,
+            attributes:
+                row.isChecked ? [.strikethroughStyle : NSUnderlineStyle.single.rawValue, .strikethroughColor : UIColor.label] : nil
+        )
+        
+        checkmark.image = row.isChecked ? UIImage.symbolWithTint("checkmark.square.fill", .label) : UIImage.symbolWithTint("checkmark.square", .label)
+        
+        let starSymbol = row.isStarred ? UIImage.symbolWithTint(star.fill, .label) : UIImage.symbolWithTint(star.zero, .label)
+        starButton.setImage(starSymbol, for: .normal)
     }
-
 }

@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="secondTableViewCell" rowHeight="176" id="2Pi-Qr-3k2" customClass="SecondTableViewCell" customModule="TravelGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SecondTableViewCell" rowHeight="176" id="2Pi-Qr-3k2" customClass="SecondTableViewCell" customModule="TravelGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="390" height="176"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Pi-Qr-3k2" id="2ja-8U-fGT">
@@ -171,7 +171,7 @@
                                     <outletCollection property="gradeImageView" destination="4c0-Wp-fli" collectionClass="NSMutableArray" id="JbX-Nd-k3Z"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="advertiseTableViewCell" rowHeight="126" id="ZoZ-Xd-KYo" customClass="AdvertiseTableViewCell" customModule="TravelGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdvertiseTableViewCell" rowHeight="126" id="ZoZ-Xd-KYo" customClass="AdvertiseTableViewCell" customModule="TravelGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="226" width="390" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZoZ-Xd-KYo" id="s3s-ly-DJd">
@@ -283,7 +283,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="thirdTableViewCell" rowHeight="50" id="t5E-38-fRO" customClass="ThirdTableViewCell" customModule="TravelGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThirdTableViewCell" rowHeight="50" id="t5E-38-fRO" customClass="ThirdTableViewCell" customModule="TravelGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="130" width="390" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t5E-38-fRO" id="akT-Rs-JpC">
@@ -429,7 +429,7 @@
                             <color key="backgroundColor" systemColor="separatorColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="firstTableViewCell" rowHeight="474" id="jXP-ak-SX0" customClass="FirstTableViewCell" customModule="TravelGuide" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FirstTableViewCell" rowHeight="474" id="jXP-ak-SX0" customClass="FirstTableViewCell" customModule="TravelGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="51" width="390" height="474"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jXP-ak-SX0" id="vtw-rV-qbx">

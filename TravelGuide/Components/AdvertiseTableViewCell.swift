@@ -7,8 +7,10 @@
 
 import UIKit
 
-class AdvertiseTableViewCell: UITableViewCell {
+final class AdvertiseTableViewCell: UITableViewCell {
 
+    static let identifier = "AdvertiseTableViewCell"
+    
     @IBOutlet var containerView: UIView!
     @IBOutlet var titleLabel: UILabel!
     
@@ -19,10 +21,7 @@ class AdvertiseTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = 12
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func config(row: Travel) {
+        titleLabel.text = row.title
     }
-
 }

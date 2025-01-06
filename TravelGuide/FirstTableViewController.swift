@@ -18,7 +18,7 @@ class FirstTableViewController: UITableViewController {
 //        print(Int.max)
     }
     
-    func convertMagazineDate(stringDate: String) -> String {
+    static func convertMagazineDate(stringDate: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyMMdd"
         guard let date = formatter.date(from: stringDate) else {
@@ -34,19 +34,9 @@ class FirstTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "firstTableViewCell", for: indexPath) as! FirstTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: FirstTableViewCell.identifier, for: indexPath) as! FirstTableViewCell
         let row = magazines[indexPath.row]
-        let url = URL(string: row.photo_image)
-        
-        cell.titleLabel.text = row.title
-        
-        cell.subtitleLabel.text = row.subtitle
-        
-        cell.photoImageView.kf.setImage(with: url)
-        
-        cell.dateLabel.text = convertMagazineDate(stringDate: row.date)
-    
-//        print(convertMagazineDate(stringDate: row.date))
+        cell.config(row: row)
         return cell
     }
     

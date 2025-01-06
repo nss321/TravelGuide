@@ -7,16 +7,18 @@
 
 import UIKit
 
-class FirstTableViewCell: UITableViewCell {
+final class FirstTableViewCell: UITableViewCell {
 
-    @IBOutlet var photoImageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subtitleLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
+    static let identifier = "FirstTableViewCell"
+    
+    @IBOutlet private var photoImageView: UIImageView!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var subtitleLabel: UILabel!
+    @IBOutlet private var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         print(#function)
         titleLabel.font = .boldSystemFont(ofSize: 24)
         subtitleLabel.font = .systemFont(ofSize: 16)
@@ -30,7 +32,14 @@ class FirstTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
+    func config(row: Magazine) {
+        titleLabel.text = row.title
+        subtitleLabel.text = row.subtitle
+        dateLabel.text = FirstTableViewController.convertMagazineDate(stringDate: row.date)
+        photoImageView.kf.setImage(with: URL(string: row.photo_image))
+    }
+    
+    
 }

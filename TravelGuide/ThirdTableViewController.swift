@@ -11,11 +11,7 @@ class ThirdTableViewController: UITableViewController {
 
     @IBOutlet var shoppingTextField: UITextField!
     
-    var list: [ShoppingItem] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var list: [ShoppingItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +25,9 @@ class ThirdTableViewController: UITableViewController {
         shoppingTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 0))
     }
     
-//    @objc func checkButtonTapped(_ sender: UITapGestureRecognizer) {
-//        if let view = sender.view {
-//            list[view.tag].isChecked.toggle()
-//            tableView.reloadData()
-//        } else {
-//            print("UITapGestureReconizer nil 검출")
-//            return
-//        }
-//    }
-    
     @objc func starButtonTapped(_ sender: UIButton) {
         list[sender.tag].isStarred.toggle()
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
     
     func addTextFieldText() {
@@ -78,28 +65,11 @@ extension ThirdTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = list[indexPath.row]
-        let symbolConfig = UIImage.SymbolConfiguration(hierarchicalColor: .label)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "thirdTableViewCell", for: indexPath) as! ThirdTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ThirdTableViewCell.identifier, for: indexPath) as! ThirdTableViewCell
         
-        cell.itemLabel.attributedText = NSAttributedString(
-            string: row.item,
-            attributes:
-                row.isChecked ? [.strikethroughStyle : NSUnderlineStyle.single.rawValue, .strikethroughColor : UIColor.label] : nil
-        )
-        
-        var checkMarkSymbol = row.isChecked ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
-        checkMarkSymbol = checkMarkSymbol?.applyingSymbolConfiguration(symbolConfig)
+        cell.config(row: row)
         cell.checkmark.tag = indexPath.row
-        cell.checkmark.image = checkMarkSymbol
-        
-        // row를 선택했을 때 체크되는게 더 자연스러운 UX라고 생각해 didSelect 메소드로 변경
-        //        cell.checkmark.isUserInteractionEnabled = true
-        //        cell.checkmark.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkButtonTapped)))
-        
-        var starSymbol = row.isStarred ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
-        starSymbol = starSymbol?.applyingSymbolConfiguration(symbolConfig)
         cell.starButton.tag = indexPath.row
-        cell.starButton.setImage(starSymbol, for: .normal)
         cell.starButton.addTarget(self, action: #selector(starButtonTapped), for: .touchUpInside)
         
         return cell
@@ -107,33 +77,37 @@ extension ThirdTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         list[indexPath.row].isChecked.toggle()
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         // default editing style -> delete
         if editingStyle == .delete {
             list.remove(at: indexPath.row)
+            tableView.reloadData()
         }
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let check = UIContextualAction(style: .normal, title: nil) { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+        let checkButton = UIContextualAction(style: .normal, title: nil) { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
             self.list[indexPath.row].isChecked.toggle()
+            tableView.reloadRows(at: [indexPath], with: .automatic)
             success(true)
         }
-        check.image = UIImage(systemName: "checkmark")
-        check.backgroundColor = .tertiaryLabel
+        checkButton.image = UIImage(systemName: "checkmark")
+        checkButton.backgroundColor = .tertiaryLabel
         
         
-        let star = UIContextualAction(style: .normal, title: nil) { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+        let starButton = UIContextualAction(style: .normal, title: nil) { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
             self.list[indexPath.row].isStarred.toggle()
+            tableView.reloadRows(at: [indexPath], with: .automatic)
             success(true)
         }
-//        star.image = UIImage(systemName: "star.fill")
-        star.backgroundColor = .quaternaryLabel
+        starButton.image = UIImage(systemName: "star.fill")
+        starButton.backgroundColor = .quaternaryLabel
         
-        return UISwipeActionsConfiguration(actions:[check, star])
+        return UISwipeActionsConfiguration(actions:[checkButton, starButton])
     }
     
 }
