@@ -111,8 +111,29 @@ extension ThirdTableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         // default editing style -> delete
-        list.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        if editingStyle == .delete {
+            list.remove(at: indexPath.row)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let check = UIContextualAction(style: .normal, title: nil) { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            self.list[indexPath.row].isChecked.toggle()
+            success(true)
+        }
+        check.image = UIImage(systemName: "checkmark")
+        check.backgroundColor = .tertiaryLabel
+        
+        
+        let star = UIContextualAction(style: .normal, title: nil) { (UIContextualAction, UIView, success: @escaping (Bool) -> Void) in
+            self.list[indexPath.row].isStarred.toggle()
+            success(true)
+        }
+//        star.image = UIImage(systemName: "star.fill")
+        star.backgroundColor = .quaternaryLabel
+        
+        return UISwipeActionsConfiguration(actions:[check, star])
     }
     
 }
