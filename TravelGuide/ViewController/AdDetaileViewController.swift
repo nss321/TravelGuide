@@ -21,7 +21,7 @@ class AdDetaileViewController: UIViewController {
     
     func setupNavigation() {
         navigationItem.title = "광고 화면"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.symbolWithTint("chevron.left", .darkGray), style: .plain, target: self, action: #selector(popThisViewController))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.symbolWithTint("xmark", .darkGray), style: .plain, target: self, action: #selector(popThisViewController))
     }
     
     func setupUI() {
@@ -31,7 +31,9 @@ class AdDetaileViewController: UIViewController {
     }
     
     @objc func popThisViewController() {
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true) {
+            print("Dismiss: AdDetailViewContoller ")
+        }
     }
 
 }

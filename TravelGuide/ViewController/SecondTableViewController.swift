@@ -66,12 +66,14 @@ class SecondTableViewController: UITableViewController {
         if row.ad {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "AdDetaileViewController") as! AdDetaileViewController
             vc.ad = row
-            navigationController?.pushViewController(vc, animated: true)
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            nav.modalTransitionStyle = .crossDissolve
+            present(nav, animated: true)
         } else {
             let vc = self.storyboard?.instantiateViewController(identifier: "CityDetailViewController") as! CityDetailViewController
             vc.detail = row
             navigationController?.pushViewController(vc, animated: true)
-            
         }
         
     }
