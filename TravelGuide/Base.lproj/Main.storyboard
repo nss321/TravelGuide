@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -511,7 +512,7 @@
                         <segue destination="lT8-eQ-edF" kind="relationship" relationship="viewControllers" id="gKb-xw-YJd"/>
                         <segue destination="Ai8-n9-V3h" kind="relationship" relationship="viewControllers" id="x4j-3d-eWg"/>
                         <segue destination="5xc-4h-SF2" kind="relationship" relationship="viewControllers" id="1k1-KT-iLJ"/>
-                        <segue destination="Nba-kJ-fif" kind="relationship" relationship="viewControllers" id="jy0-lp-dS7"/>
+                        <segue destination="hoY-km-TuT" kind="relationship" relationship="viewControllers" id="0Ee-XA-pM7"/>
                         <segue destination="a2u-qK-7Yg" kind="relationship" relationship="viewControllers" id="JOd-nF-hY6"/>
                     </connections>
                 </tabBarController>
@@ -751,6 +752,82 @@
             </objects>
             <point key="canvasLocation" x="3416.9230769230767" y="2047.3933649289099"/>
         </scene>
+        <!--인기 도시-->
+        <scene sceneID="YQc-2j-Htp">
+            <objects>
+                <viewController storyboardIdentifier="CityCollectionViewController" id="TfH-c0-BuO" customClass="CityCollectionViewController" customModule="TravelGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="asj-yg-9r6">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gYK-q2-I13">
+                                <rect key="frame" x="16" y="145" width="358" height="32"/>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gkX-HJ-XnG">
+                                <rect key="frame" x="16" y="103" width="358" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vfl-e7-Swg">
+                                <rect key="frame" x="12" y="196" width="366" height="565"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2CH-NC-IjB">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aro-30-jaM">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xv0-hi-aqc">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="964-h6-KBY">
+                                <rect key="frame" x="0.0" y="91" width="390" height="1"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="5mQ-G0-a2M"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cbw-bc-PY5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gkX-HJ-XnG" firstAttribute="top" secondItem="cbw-bc-PY5" secondAttribute="top" constant="12" id="4tb-c4-1eg"/>
+                            <constraint firstItem="vfl-e7-Swg" firstAttribute="top" secondItem="gYK-q2-I13" secondAttribute="bottom" constant="20" id="6ZK-QV-9Rr"/>
+                            <constraint firstItem="964-h6-KBY" firstAttribute="top" secondItem="cbw-bc-PY5" secondAttribute="top" id="95M-rs-g0Y"/>
+                            <constraint firstItem="vfl-e7-Swg" firstAttribute="leading" secondItem="cbw-bc-PY5" secondAttribute="leading" constant="12" id="Bmc-OV-N3d"/>
+                            <constraint firstItem="cbw-bc-PY5" firstAttribute="bottom" secondItem="vfl-e7-Swg" secondAttribute="bottom" id="KXh-7O-4Be"/>
+                            <constraint firstItem="cbw-bc-PY5" firstAttribute="trailing" secondItem="gYK-q2-I13" secondAttribute="trailing" constant="16" id="LDw-vU-uQE"/>
+                            <constraint firstItem="gkX-HJ-XnG" firstAttribute="leading" secondItem="cbw-bc-PY5" secondAttribute="leading" constant="16" id="Otf-PJ-t09"/>
+                            <constraint firstItem="cbw-bc-PY5" firstAttribute="trailing" secondItem="vfl-e7-Swg" secondAttribute="trailing" constant="12" id="P7t-nK-efM"/>
+                            <constraint firstItem="964-h6-KBY" firstAttribute="leading" secondItem="asj-yg-9r6" secondAttribute="leading" id="f8e-qi-rph"/>
+                            <constraint firstItem="gYK-q2-I13" firstAttribute="leading" secondItem="cbw-bc-PY5" secondAttribute="leading" constant="16" id="fAr-oI-OF3"/>
+                            <constraint firstItem="gYK-q2-I13" firstAttribute="top" secondItem="gkX-HJ-XnG" secondAttribute="bottom" constant="8" id="k5U-bH-nuB"/>
+                            <constraint firstAttribute="trailing" secondItem="964-h6-KBY" secondAttribute="trailing" id="nHA-N6-S4y"/>
+                            <constraint firstItem="cbw-bc-PY5" firstAttribute="trailing" secondItem="gkX-HJ-XnG" secondAttribute="trailing" constant="16" id="uuS-YQ-koU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="인기 도시" id="n9M-Ol-Hcx"/>
+                    <connections>
+                        <outlet property="cityCollectionView" destination="vfl-e7-Swg" id="BL1-UQ-myZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ga-D8-Bd3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3451" y="2782"/>
+        </scene>
         <!--Item-->
         <scene sceneID="YoX-p9-yzH">
             <objects>
@@ -812,6 +889,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0q-th-Bck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2487.6923076923076" y="2048.815165876777"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="GuX-V7-BLX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hoY-km-TuT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="flame" catalog="system" selectedImage="flame.fill" id="0cV-Yz-hDw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mjr-qm-OmS">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TfH-c0-BuO" kind="relationship" relationship="rootViewController" id="T7p-6S-lLN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAN-us-5MW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2522" y="2782"/>
         </scene>
     </scenes>
     <resources>

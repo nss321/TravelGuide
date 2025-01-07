@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23077.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23068.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CityCollectionViewCell" id="gTV-IL-0wX" customClass="CityCollectionViewCell" customModule="TravelGuide" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="333"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="333"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ycM-0M-13D">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ycM-0M-13D" secondAttribute="height" multiplier="1:1" id="rqJ-Ii-1Ge"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1I-5T-GmV">
+                        <rect key="frame" x="0.0" y="258" width="250" height="20.333333333333314"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTb-pN-LM7">
+                        <rect key="frame" x="0.0" y="282.33333333333331" width="250" height="13.333333333333314"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="DTb-pN-LM7" firstAttribute="top" secondItem="s1I-5T-GmV" secondAttribute="bottom" constant="4" id="0l8-aB-zKn"/>
+                <constraint firstItem="DTb-pN-LM7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EB8-9i-ae7"/>
+                <constraint firstAttribute="trailing" secondItem="s1I-5T-GmV" secondAttribute="trailing" id="G28-9w-xgv"/>
+                <constraint firstItem="s1I-5T-GmV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LgG-Rd-x51"/>
+                <constraint firstAttribute="trailing" secondItem="DTb-pN-LM7" secondAttribute="trailing" id="Ny4-83-3Qz"/>
+                <constraint firstItem="s1I-5T-GmV" firstAttribute="top" secondItem="ycM-0M-13D" secondAttribute="bottom" constant="8" id="Ogh-XD-6Fv"/>
+                <constraint firstItem="ycM-0M-13D" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Oqr-Z9-vGd"/>
+                <constraint firstItem="s1I-5T-GmV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="UzI-TK-jq9"/>
+                <constraint firstAttribute="trailing" secondItem="ycM-0M-13D" secondAttribute="trailing" id="W3G-Ri-t6Z"/>
+                <constraint firstItem="ycM-0M-13D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qPs-Bg-gcx"/>
+                <constraint firstItem="DTb-pN-LM7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vCc-i3-slL"/>
+            </constraints>
+            <size key="customSize" width="66" height="139"/>
+            <connections>
+                <outlet property="cityCircleView" destination="ycM-0M-13D" id="7zQ-1r-T1f"/>
+                <outlet property="cityLabel" destination="s1I-5T-GmV" id="3xC-Rb-ypo"/>
+                <outlet property="subLabel" destination="DTb-pN-LM7" id="3Ji-nh-5BB"/>
+            </connections>
+            <point key="canvasLocation" x="-21.374045801526716" y="48.591549295774648"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
