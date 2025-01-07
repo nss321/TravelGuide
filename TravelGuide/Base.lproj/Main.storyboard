@@ -235,6 +235,127 @@
             </objects>
             <point key="canvasLocation" x="2423.0769230769229" y="686.72985781990519"/>
         </scene>
+        <!--City Detail View Controller-->
+        <scene sceneID="fBU-Ut-eSU">
+            <objects>
+                <viewController storyboardIdentifier="CityDetailViewController" id="phS-Mz-mbv" customClass="CityDetailViewController" customModule="TravelGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eIz-Qv-f1p">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qiz-f3-eCJ">
+                                <rect key="frame" x="32" y="79" width="326" height="326"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qiz-f3-eCJ" secondAttribute="height" multiplier="1:1" id="dla-MY-fbQ"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbj-Lr-Nfb">
+                                <rect key="frame" x="0.0" y="47" width="390" height="1"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="rk4-af-5qg"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cep-vj-Ncz">
+                                <rect key="frame" x="154.33333333333334" y="429" width="81.666666666666657" height="38.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uh-V4-KD2">
+                                <rect key="frame" x="24" y="479.33333333333331" width="342" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8R-U6-mQX">
+                                <rect key="frame" x="110.33333333333333" y="528" width="169.66666666666669" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6rO-oB-8Gx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다른 관광지 보러 가기" cornerStyle="fixed">
+                                    <backgroundConfiguration key="background" cornerRadius="22">
+                                        <color key="backgroundColor" red="0.53725492949999998" green="0.68235301969999995" blue="0.87843137979999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="popButtonTapped:" destination="phS-Mz-mbv" eventType="touchUpInside" id="H3K-cE-fyi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y7Q-rt-05S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y7Q-rt-05S" firstAttribute="trailing" secondItem="3Uh-V4-KD2" secondAttribute="trailing" constant="24" id="6y4-36-OEh"/>
+                            <constraint firstItem="cep-vj-Ncz" firstAttribute="top" secondItem="Qiz-f3-eCJ" secondAttribute="bottom" constant="24" id="DBg-OH-NjY"/>
+                            <constraint firstItem="Qiz-f3-eCJ" firstAttribute="top" secondItem="Y7Q-rt-05S" secondAttribute="top" constant="32" id="Ji1-Za-lIy"/>
+                            <constraint firstItem="Y7Q-rt-05S" firstAttribute="trailing" secondItem="gbj-Lr-Nfb" secondAttribute="trailing" id="MON-gq-FYx"/>
+                            <constraint firstItem="3Uh-V4-KD2" firstAttribute="leading" secondItem="Y7Q-rt-05S" secondAttribute="leading" constant="24" id="Q5T-FI-HJw"/>
+                            <constraint firstItem="cep-vj-Ncz" firstAttribute="centerX" secondItem="eIz-Qv-f1p" secondAttribute="centerX" id="XJJ-wV-KvS"/>
+                            <constraint firstItem="3Uh-V4-KD2" firstAttribute="centerX" secondItem="eIz-Qv-f1p" secondAttribute="centerX" id="ZXg-e3-NKg"/>
+                            <constraint firstItem="gbj-Lr-Nfb" firstAttribute="leading" secondItem="Y7Q-rt-05S" secondAttribute="leading" id="dUW-G0-AKX"/>
+                            <constraint firstItem="3Uh-V4-KD2" firstAttribute="top" secondItem="cep-vj-Ncz" secondAttribute="bottom" constant="12" id="eXH-Dm-E6n"/>
+                            <constraint firstItem="H8R-U6-mQX" firstAttribute="centerX" secondItem="eIz-Qv-f1p" secondAttribute="centerX" id="hO9-jk-4SY"/>
+                            <constraint firstItem="H8R-U6-mQX" firstAttribute="top" secondItem="3Uh-V4-KD2" secondAttribute="bottom" constant="20" id="hzY-5c-VGU"/>
+                            <constraint firstItem="Qiz-f3-eCJ" firstAttribute="leading" secondItem="Y7Q-rt-05S" secondAttribute="leading" constant="32" id="iMQ-81-sR8"/>
+                            <constraint firstItem="Y7Q-rt-05S" firstAttribute="trailing" secondItem="Qiz-f3-eCJ" secondAttribute="trailing" constant="32" id="iso-mL-icb"/>
+                            <constraint firstItem="gbj-Lr-Nfb" firstAttribute="top" secondItem="Y7Q-rt-05S" secondAttribute="top" id="rEP-Et-mV7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityImageView" destination="Qiz-f3-eCJ" id="nsX-KP-iL6"/>
+                        <outlet property="cityLabel" destination="cep-vj-Ncz" id="g4i-2S-JfB"/>
+                        <outlet property="descLabel" destination="3Uh-V4-KD2" id="h0X-KJ-xrN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="226-Y0-BLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3229" y="687"/>
+        </scene>
+        <!--Ad Detaile View Controller-->
+        <scene sceneID="VIh-0j-qv0">
+            <objects>
+                <viewController storyboardIdentifier="AdDetaileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P35-dn-s8W" customClass="AdDetaileViewController" customModule="TravelGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZvK-Ei-9gV">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도쿄 여행 예약은? 수업이 있는데 가실 생각은 아니시죠?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baH-K9-bIr">
+                                <rect key="frame" x="44" y="364.66666666666669" width="302" height="114.66666666666669"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ft3-es-RGg">
+                                <rect key="frame" x="0.0" y="47" width="390" height="1"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="BYy-AP-d7l"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8lZ-wJ-FYh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ft3-es-RGg" firstAttribute="top" secondItem="8lZ-wJ-FYh" secondAttribute="top" id="NwO-81-pn4"/>
+                            <constraint firstItem="ft3-es-RGg" firstAttribute="leading" secondItem="ZvK-Ei-9gV" secondAttribute="leading" id="T6y-AV-Mj2"/>
+                            <constraint firstItem="baH-K9-bIr" firstAttribute="centerX" secondItem="ZvK-Ei-9gV" secondAttribute="centerX" id="WZw-l2-Zqw"/>
+                            <constraint firstAttribute="trailing" secondItem="ft3-es-RGg" secondAttribute="trailing" id="gk7-C2-iyW"/>
+                            <constraint firstAttribute="trailing" secondItem="baH-K9-bIr" secondAttribute="trailing" constant="44" id="jlb-x1-eYN"/>
+                            <constraint firstItem="baH-K9-bIr" firstAttribute="centerY" secondItem="ZvK-Ei-9gV" secondAttribute="centerY" id="tGB-CE-HXW"/>
+                            <constraint firstItem="baH-K9-bIr" firstAttribute="leading" secondItem="ZvK-Ei-9gV" secondAttribute="leading" constant="44" id="zKR-cZ-bBA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="advertisementLabel" destination="baH-K9-bIr" id="AWS-kC-yiJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yX9-pg-MRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4042" y="687"/>
+        </scene>
         <!--쇼핑-->
         <scene sceneID="6uG-2H-jh4">
             <objects>
@@ -710,16 +831,16 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

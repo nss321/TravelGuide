@@ -60,4 +60,20 @@ class SecondTableViewController: UITableViewController {
         return height
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = travleInfo[indexPath.row]
+        
+        if row.ad {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AdDetaileViewController") as! AdDetaileViewController
+            vc.ad = row
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = self.storyboard?.instantiateViewController(identifier: "CityDetailViewController") as! CityDetailViewController
+            vc.detail = row
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
+    }
+    
 }

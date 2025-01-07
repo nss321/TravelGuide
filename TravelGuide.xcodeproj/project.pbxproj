@@ -11,6 +11,8 @@
 		1140F2F32D292847003B9097 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140F2F22D292847003B9097 /* ThirdTableViewCell.swift */; };
 		1140F2F62D292D7F003B9097 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1140F2F52D292D7F003B9097 /* Kingfisher */; };
 		11434A3C2D2A78C2004D79DB /* AdvertiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11434A3B2D2A78C2004D79DB /* AdvertiseTableViewCell.swift */; };
+		116FDF672D2D3E48008FDB88 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FDF662D2D3E48008FDB88 /* CityDetailViewController.swift */; };
+		116FDF692D2D4805008FDB88 /* AdDetaileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116FDF682D2D4805008FDB88 /* AdDetaileViewController.swift */; };
 		1171DB052D291AC5009296F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171DB042D291AC5009296F6 /* AppDelegate.swift */; };
 		1171DB072D291AC5009296F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171DB062D291AC5009296F6 /* SceneDelegate.swift */; };
 		1171DB092D291AC5009296F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171DB082D291AC5009296F6 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		1140F2F02D292841003B9097 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
 		1140F2F22D292847003B9097 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
 		11434A3B2D2A78C2004D79DB /* AdvertiseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiseTableViewCell.swift; sourceTree = "<group>"; };
+		116FDF662D2D3E48008FDB88 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
+		116FDF682D2D4805008FDB88 /* AdDetaileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetaileViewController.swift; sourceTree = "<group>"; };
 		1171DB012D291AC5009296F6 /* TravelGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1171DB042D291AC5009296F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1171DB062D291AC5009296F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				11721D842D292677002F49A3 /* ThirdTableViewController.swift */,
 				11A0E9E62D2C1F0C00B3EBE3 /* CityTableViewController.swift */,
 				11A0E9E82D2C238F00B3EBE3 /* ShadowTestViewController.swift */,
+				116FDF662D2D3E48008FDB88 /* CityDetailViewController.swift */,
+				116FDF682D2D4805008FDB88 /* AdDetaileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 				11434A3C2D2A78C2004D79DB /* AdvertiseTableViewCell.swift in Sources */,
 				11A0E9E92D2C238F00B3EBE3 /* ShadowTestViewController.swift in Sources */,
 				11721D872D292804002F49A3 /* FirstTableViewCell.swift in Sources */,
+				116FDF672D2D3E48008FDB88 /* CityDetailViewController.swift in Sources */,
 				1140F2F12D292841003B9097 /* SecondTableViewCell.swift in Sources */,
 				11721D7E2D292395002F49A3 /* TravelInfo.swift in Sources */,
 				11A0E9E42D2C134D00B3EBE3 /* UIImage+.swift in Sources */,
@@ -249,6 +256,7 @@
 				11721D832D292671002F49A3 /* SecondTableViewController.swift in Sources */,
 				1171DB052D291AC5009296F6 /* AppDelegate.swift in Sources */,
 				1171DB072D291AC5009296F6 /* SceneDelegate.swift in Sources */,
+				116FDF692D2D4805008FDB88 /* AdDetaileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
