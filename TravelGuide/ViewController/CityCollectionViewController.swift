@@ -7,17 +7,32 @@
 
 import UIKit
 
-class CityCollectionViewController: UIViewController {
+final class CityCollectionViewController: UIViewController {
 
-    let cityInfo = CityInfo().city
-
+    @IBOutlet var searchTextField: UITextField!
     @IBOutlet var cityCollectionView: UICollectionView!
+    @IBOutlet var regionSegmentedControl: UISegmentedControl!
+    
+    let cityInfo = CityInfo().city
+    var domesticCities: [City] {
+        cityInfo.filter { $0.domestic_travel }
+    }
+    var overseasCities: [City] {
+        cityInfo.filter { !$0.domestic_travel }
+    }
+    var filterdList: [City] = [] {
+        didSet {
+            cityCollectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        searchTextField.addTarget(self, action: #selector(returnKeyTapped), for: .editingDidEndOnExit)
+        searchTextField.addTarget(self, action: #selector(realTimeSearching), for: .editingChanged)
+        regionSegmentedControl.addTarget(self, action: #selector(regionSegmentedChanged), for: .valueChanged)
     }
-    
     
     func setupUI() {
 //        print(UIDevice.current.name)
@@ -45,22 +60,108 @@ class CityCollectionViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         cityCollectionView.collectionViewLayout = layout
     }
+    
+    @objc func returnKeyTapped(_ sender: UITextField) {
+        view.endEditing(true)
+        if searchTextField.text! == "" {
+            showSimpleAlert(title: "경고", message: "공백을 입력했습니다.", handler: nil)
+        }
+        cityCollectionView.reloadData()
+    }
+    
+    @objc func realTimeSearching(_ sender: UITextField) {
+        print(searchTextField.text!)
+        searchingText()
+    }
+    
+    func searchingText() {
+        guard let item = searchTextField.text else { return }
+        
+        if item == " " {
+            filterdList.removeAll()
+            cityCollectionView.reloadData()
+            return
+        } else if item == "" {
+            filterdList = cityInfo
+            cityCollectionView.reloadData()
+            return
+        }
+        
+        switch regionSegmentedControl.selectedSegmentIndex {
+        case 0:
+            findingKeyword(targetList: cityInfo, forWhat: item)
+        case 1:
+            findingKeyword(targetList: domesticCities, forWhat: item)
+        case 2:
+            findingKeyword(targetList: overseasCities, forWhat: item)
+        default:
+            print("Invalid SegmentedControl Index")
+        }
+    }
+    
+    func findingKeyword(targetList list: [City], forWhat item: String) {
+        filterdList.removeAll()
+        print("current: \(item)")
+        list.forEach {
+            if "\($0.city_name), \($0.city_english_name), \($0.city_explain)".lowercased().contains(item.lowercased()) {
+                print("\($0.city_name)")
+                print("검출 문자: \(item)")
+                filterdList.append($0)
+            }
+        }
+    }
+    
+    @objc func regionSegmentedChanged(_ sender: UISegmentedControl) {
+        view.endEditing(true)
+        searchTextField.text = ""
+        cityCollectionView.reloadData()
+    }
 
 }
 
 extension CityCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        cityInfo.count
+        if searchTextField.isEditing {
+            return filterdList.count
+        } else {
+            switch regionSegmentedControl.selectedSegmentIndex {
+            case 0:
+                return cityInfo.count
+            case 1:
+                return domesticCities.count
+            case 2:
+                return overseasCities.count
+            default:
+                return cityInfo.count
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let row = cityInfo[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCollectionViewCell.identifier, for: indexPath) as! CityCollectionViewCell
-        cell.config(row: row)
 //        cell.layer.borderColor = UIColor.red.cgColor
 //        cell.layer.borderWidth = 1
-        return cell
+        
+        if searchTextField.isEditing {
+            cell.config(row: filterdList[indexPath.row])
+            return cell
+        } else {
+            switch regionSegmentedControl.selectedSegmentIndex {
+            case 0:
+                cell.config(row: cityInfo[indexPath.row])
+                return cell
+            case 1:
+                cell.config(row: domesticCities[indexPath.row])
+                return cell
+            case 2:
+                cell.config(row: overseasCities[indexPath.row])
+                return cell
+            default:
+                cell.config(row: cityInfo[indexPath.row])
+                return cell
+            }
+        }
     }
     
 }

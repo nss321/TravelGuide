@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CityTableViewController: UITableViewController {
+final class CityTableViewController: UITableViewController {
     
     let cityInfo = CityInfo().city
     var domesticCities: [City] {
@@ -42,7 +42,7 @@ class CityTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    @IBAction func realTimeSearching(_ sender: Any) {
+    @IBAction func realTimeSearching(_ sender: UITextField) {
         print(searchTextField.text!)
         searchingText()
 //        print("검색 결과 : \(filterdList)")

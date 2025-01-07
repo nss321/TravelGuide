@@ -822,6 +822,8 @@
                     <navigationItem key="navigationItem" title="인기 도시" id="n9M-Ol-Hcx"/>
                     <connections>
                         <outlet property="cityCollectionView" destination="vfl-e7-Swg" id="BL1-UQ-myZ"/>
+                        <outlet property="regionSegmentedControl" destination="gYK-q2-I13" id="eVk-qu-pNQ"/>
+                        <outlet property="searchTextField" destination="gkX-HJ-XnG" id="Hp0-IF-VCe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ga-D8-Bd3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
