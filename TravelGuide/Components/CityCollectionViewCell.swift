@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CityCollectionViewCell: UICollectionViewCell {
+final class CityCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "CityCollectionViewCell"
     @IBOutlet var cityCircleView: UIImageView!
@@ -26,4 +26,34 @@ class CityCollectionViewCell: UICollectionViewCell {
         subLabel.text = row.city_explain
         cityCircleView.kf.setImage(with: URL(string: row.city_image))
     }
+    
+    func config(row: City, currentText: String) {
+        
+        let name = "\(row.city_name) | \(row.city_english_name)"
+        let explain = row.city_explain
+        
+        cityLabel.attributedText = changeAllMatches(for: currentText, in: name)
+        subLabel.attributedText = changeAllMatches(for: currentText, in: explain)
+        cityCircleView.kf.setImage(with: URL(string: row.city_image))
+        
+    }
+    
+    func changeAllMatches(for pattern: String, in text: String) -> NSMutableAttributedString? {
+        let attrStr = NSMutableAttributedString(string: text)
+        do {
+            let regex = try NSRegularExpression(pattern: pattern, options: [.caseInsensitive])
+            
+            let results = regex.matches(in: text, range: NSRange(location:0, length:text.count))
+            results.forEach {
+                attrStr.addAttribute(.backgroundColor, value: UIColor.systemYellow, range: $0.range)
+            }
+            
+        } catch let error {
+            print("invalid pattern: \(error.localizedDescription)")
+            return nil
+        }
+        return  attrStr
+    }
+    
+    
 }

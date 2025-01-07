@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RegexBuilder
 
 final class CityCollectionViewController: UIViewController {
 
@@ -25,6 +26,7 @@ final class CityCollectionViewController: UIViewController {
             cityCollectionView.reloadData()
         }
     }
+    var currentText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +67,15 @@ final class CityCollectionViewController: UIViewController {
         view.endEditing(true)
         if searchTextField.text! == "" {
             showSimpleAlert(title: "경고", message: "공백을 입력했습니다.", handler: nil)
+        } else if filterdList.isEmpty {
+            showSimpleAlert(title: "검색 결과", message: "검색 결과가 없습니다 (´;︵;`) ", handler: nil)
+            searchTextField.text = ""
         }
         cityCollectionView.reloadData()
     }
     
     @objc func realTimeSearching(_ sender: UITextField) {
-        print(searchTextField.text!)
+//        print(searchTextField.text!)
         searchingText()
     }
     
@@ -104,8 +109,9 @@ final class CityCollectionViewController: UIViewController {
         print("current: \(item)")
         list.forEach {
             if "\($0.city_name), \($0.city_english_name), \($0.city_explain)".lowercased().contains(item.lowercased()) {
-                print("\($0.city_name)")
-                print("검출 문자: \(item)")
+//                print("\($0.city_name)")
+                print("도시:\($0.city_name), 검출 문자: \(item)")
+                self.currentText = item
                 filterdList.append($0)
             }
         }
@@ -144,7 +150,8 @@ extension CityCollectionViewController: UICollectionViewDataSource, UICollection
 //        cell.layer.borderWidth = 1
         
         if searchTextField.isEditing {
-            cell.config(row: filterdList[indexPath.row])
+//            cell.config(row: filterdList[indexPath.row])
+            cell.config(row: filterdList[indexPath.row], currentText: self.currentText)
             return cell
         } else {
             switch regionSegmentedControl.selectedSegmentIndex {
